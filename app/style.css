@@ -1,0 +1,146 @@
+
+body {
+    margin: 20;
+    font-family: Arial, sans-serif; 
+    background-color: #FDFDFD; 
+}
+
+
+.screen {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    overflow: hidden; 
+}
+
+
+#welcomePage {
+    justify-content: center;
+    align-items: center;
+}
+
+.center-content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+
+#logoImage {
+    width: 150px;
+    height: auto;
+    margin-bottom: 40px; 
+    display: block;
+}
+
+
+.bold-text {
+    font-size: 32px;
+    font-weight: bold;
+    color: #333;
+    margin: 0 0 10px 0;
+}
+
+
+.sub-text {
+    font-size: 20px;
+    font-weight: 300; 
+    color: #666;
+    margin: 0 0 40px 0;
+}
+
+#startButton {
+    background-color: #725FA1; 
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 15px 60px;
+    border: none;
+    border-radius: 25px; 
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: background-color 0.2s;
+}
+
+#startButton:hover {
+    background-color: #5D4D84; 
+}
+
+#chatPage.main-container {
+    flex-direction: column;
+}
+
+.scroll-area {
+    flex: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 100px; 
+    width: 100%;
+}
+
+#welcometext {
+    font-size: 35px;
+    font-weight: bold;
+    text-align: center;
+    margin: 0 20px;
+    color: #333;
+}
+
+.bottom-bar {
+    display: flex;
+    align-items: center;
+    padding: 20px 40px; 
+    background: #fff;
+    border-top: 1px solid #E0E0E0;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.05); 
+
+#crop {
+    flex: 1;
+    margin-right: 15px;
+    padding: 15px;
+    border: 1px solid #DEDEDE; 
+    border-radius: 8px; 
+    font-size: 16px;
+    background-color: #FAFAFA;
+}
+
+
+#enterButton {
+    padding: 15px 30px; 
+    background-color: #725FA1;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 25px; 
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+#refreshButton {
+    padding: 15px 30px;
+    color: white;
+    background-color: #725FA1;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+.bubble {
+    width: fit-content;
+    max-width: 80%;
+    margin: 10px 20px;
+    padding: 12px;
+    border-radius: 12px;
+}
+
+.user { align-self: flex-end; background-color: #DCF8C6; }
+.system { align-self: flex-start; background-color: #F1F0F0; }

@@ -1,0 +1,35 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farming Assitant</title>
+    
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="app.js"></script>
+</head>
+
+<div id="welcomePage" class="screen">
+    <div class="center-content">
+        <img src="logo.png" id="logoImage" alt="Logo">
+        <h1 class="bold-text">Welcome To</h1>
+        <h2 class="sub-text">Farming Assistant</h2>
+        <button id="startButton">Start</button>
+    </div>
+</div>
+
+<div id="chatPage" class="main-container screen" style="display: none;">
+    <div class="scroll-area">
+        <div id="topLayout" class="chat-content">
+            <h1 id="welcometext">What crops would you like to plant?</h1>
+            </div>
+    </div>
+
+    <div class="bottom-bar" id="bottomLayout">
+        <input type="text" id="crop" placeholder="Enter crops to plant">
+        
+        <button id="enterButton">
+            <span class="arrow-icon">→</span>
+        </button>
+        
+        <button id="refreshButton">⟳</button>
+    </div>
+</div>
