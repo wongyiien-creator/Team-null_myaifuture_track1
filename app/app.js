@@ -74,7 +74,7 @@ async function getAddress(lat, lon, crop) {
 
 async function callAgent(crop, location) {
     try {
-        const response = await fetch("http://localhost:8082/analyzeFarmAgent", {
+        const response = await fetch("https://analyzefarmagent-309499836612.us-central1.run.app", {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
@@ -123,18 +123,18 @@ function addChatBubble(sender, message) {
     bubble.style.maxWidth = "80%";
     bubble.style.fontSize = "16px";
     bubble.style.whiteSpace = "pre-wrap";
-    bubble.innerText = message; 
+    bubble.innerText = message;
 
     if (sender == "user") {
         bubble.style.alignSelf = "flex-end";
-        bubble.style.backgroundColor = "#725FA1"; 
+        bubble.style.backgroundColor = "#725FA1";
         bubble.style.color = "#FFFFFF";
-        bubble.style.marginLeft = "auto"; 
+        bubble.style.marginLeft = "auto";
     } else {
         bubble.style.alignSelf = "flex-start";
-        bubble.style.backgroundColor = "#f8f9fa"; 
+        bubble.style.backgroundColor = "#f8f9fa";
         bubble.style.border = "1px solid #ccc";
-        bubble.style.marginRight = "auto"; 
+        bubble.style.marginRight = "auto";
     }
     chatContainer.appendChild(bubble);
     chatContainer.scrollTop = chatContainer.scrollHeight;
@@ -144,18 +144,18 @@ function handleRefresh() {
     cropField.disabled = false;
     enterButton.disabled = false;
     refreshButton.disabled = false;
-    cropField.value = ""; 
+    cropField.value = "";
 
     chatContainer.innerHTML = '';
 
     const welcomeTextHtml = `<h1 id="welcometext">What crops would you like to plant?</h1>`;
     chatContainer.insertAdjacentHTML('beforeend', welcomeTextHtml);
-    
+
 }
 
 startButton.addEventListener('click', () => {
     welcomePage.style.display = 'none';
-    chatPage.style.display = 'flex'; 
+    chatPage.style.display = 'flex';
 });
 
 refreshButton.addEventListener('click', handleRefresh);
