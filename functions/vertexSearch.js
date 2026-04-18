@@ -5,7 +5,7 @@ const ai = genkit({
   plugins: [
     vertexAI({ location: 'us-central1' })
   ],
-  model: vertexAI.model('gemini-2.0-flash'),
+  model: vertexAI.model('gemini-1.5-flash'),
 });
 
 export async function vertexSearch(type, input) {
