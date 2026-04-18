@@ -74,7 +74,7 @@ async function getAddress(lat, lon, crop) {
 
 async function callAgent(crop, location) {
     try {
-        const response = await fetch("https://analyzefarmagent-309499836612.us-central1.run.app", {
+        const response = await fetch("https://analyzefarmagent-309499836612.us-central1.run.app/analyzeFarmAgent", {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
