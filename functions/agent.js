@@ -5,7 +5,7 @@ import { vertexSearch } from "./vertexSearch.js";
 
 const ai = genkit({
   plugins: [vertexAI({ location: 'us-central1' })],
-  model: 'vertexAI/gemini-2.0-flash',
+  model: 'vertexAI/gemini-1.5-flash',
 });
 
 export async function analyzeFarmAgent(input) {
