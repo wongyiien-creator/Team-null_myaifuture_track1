@@ -3,11 +3,11 @@ import { vertexAI } from '@genkit-ai/vertexai';
 import { vertexSearch } from "./vertexSearch.js";
 //original(moved to vertexai): import { googleAI } from '@genkit-ai/google-genai';
 
-const model = 'vertexAI/gemini-1.5-flash'
-
 const ai = genkit({
-  plugins: [vertexAI({ location: 'us-central1' })],
-  model: 'gemini-1.5-flash',
+  plugins: [
+    vertexAI({ location: 'us-central1' })
+  ],
+  model: vertexAI.model('gemini-2.5-flash'),
 });
 
 export async function analyzeFarmAgent(input) {
