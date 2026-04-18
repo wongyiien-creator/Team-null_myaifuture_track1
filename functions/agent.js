@@ -6,7 +6,7 @@ import { VertexAI } from '@google-cloud/vertexai';
 
 const ai = genkit({
   plugins: [vertexAI({ location: 'us-central1' })],
-  model: 'vertexAI/gemini-2.5-flash',
+  model: 'vertexAI/gemini-2.0-flash',
 });
 
 export async function analyzeFarmAgent(input) {
