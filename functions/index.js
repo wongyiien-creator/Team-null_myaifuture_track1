@@ -3,7 +3,7 @@ import cors from 'cors';
 import 'dotenv/config';
 
 const app = express();
-const PORT = process.env.PORT || 8082;
+const PORT = process.env.PORT || 8080;
 
 
 app.use(express.json());
@@ -34,7 +34,7 @@ app.get('/', (req, res) => {
 });
 
 app.listen(PORT, '0.0.0.0', () => {
-  console.log(`Backend is listening on port ${PORT}`);
+    console.log(`Backend is listening on port ${PORT}`);
 });
 
 
