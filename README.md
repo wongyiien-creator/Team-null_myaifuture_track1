@@ -1,8 +1,11 @@
 # null_MyAIFuture: Farming Assistant
 
 # Instruction
-Click the Google Cloud Run link to access the website: 
+1. Click the Google Cloud Run link to access the website: 
 Cloud Run Link: https://analyzefarmagent-309499836612.us-central1.run.app
+2. Be sure to allow every premission that was asked (location, services)
+
+Canva Link: https://www.canva.com/design/DAHGhWmGe24/glu_HiesaEq1laFYmcI6nQ/edit
 
 # Overview
 "Farming Assistant" aims to produce an optimize farming plan of the choosen based on weather and soil data. AI is used throughout the coding process as an assitant. 
@@ -36,16 +39,18 @@ Orchestrator: Firebase Genkit
 
 Context: Vertex AI Search
 
-Development Lifecycle: Google Workstation - Coding | Google Clound Run - Deployment
+Development Lifecycle: Google Clound Run - Deployment
 
 Location: Google Geocoding | W3C Geolocation
 
 Language: Javascript | HTML | CSS
 
+Development Platform: Google Antigravity (Proof in slides and video)
+
 # Flow
 This is a Farming Assistant website, it aims to help optimize the yield of crop through analysis and planning. To activate the website, the user must physically be at the farm and  enter the crop they wish to plant in their farm. Using W3C Geolocation API with enableHighAccuracy toggled to get an accurate coordinate, the system will obtain the coordinates of the user. Then, it will use Google Maps Geocoding API to translate the coordinates into address. 
 
-Once the website got its address, it will input the address and chosen crop to the agent and call the backend. The backend is developed in Google Workstations, providing a managed development environment. It is deployed using Google Cloud Run as it is a serverless platform and can scale based on incoming request, allowing the website to remain responsive despite large volume of request. The backend used Firebase Genkit, which serves as an orchestration framework. It streamlines the integration between custom logic and language models. It handles the formatting of prompts and parsing of JSON output through the input and output schema. Firebase Genkit will automatically parse the input or output to fit the schema, making the code less heavy. Within the flow we used Vertex AI Search o perform Retrieval-Augmented Generation (RAG). This allow the agent to search and fetch real time data from Google’s vast search index. Using Vertex AI Search, the agent fetch the weather data, consisting of current temperature, current humidity, 24-hour forecast temperature and 24-hour forecast humidity. Additionally, Vertex AI Search will also search for soil texture, soil ph and the drainage of the farm and the eligibility of the chosen crop. If the crop is an eligible crop, it will continue and input the searched data to Gemini via Google AI Studio. Gemini will the analyse and provide the suitability of the crop, the irrigation plan, fertilizer plan and precaution plan. 
+Once the website got its address, it will input the address and chosen crop to the agent and call the backend. The backend is developed in Google Antigravity, providing a managed development environment. It is deployed using Google Cloud Run as it is a serverless platform and can scale based on incoming request, allowing the website to remain responsive despite large volume of request. The backend used Firebase Genkit, which serves as an orchestration framework. It streamlines the integration between custom logic and language models. It handles the formatting of prompts and parsing of JSON output through the input and output schema. Firebase Genkit will automatically parse the input or output to fit the schema, making the code less heavy. Within the flow we used Vertex AI Search o perform Retrieval-Augmented Generation (RAG). This allow the agent to search and fetch real time data from Google’s vast search index. Using Vertex AI Search, the agent fetch the weather data, consisting of current temperature, current humidity, 24-hour forecast temperature and 24-hour forecast humidity. Additionally, Vertex AI Search will also search for soil texture, soil ph and the drainage of the farm and the eligibility of the chosen crop. If the crop is an eligible crop, it will continue and input the searched data to Gemini via Google AI Studio. Gemini will the analyse and provide the suitability of the crop, the irrigation plan, fertilizer plan and precaution plan. 
 
 The backend will the send the output information to the frontend, so that the frontend can show the information to the user through chat bubbles. The frontend, is a webpage developed using HTML and CSS.
 
