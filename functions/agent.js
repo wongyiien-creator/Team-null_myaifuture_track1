@@ -1,14 +1,12 @@
 import { genkit, z } from 'genkit';
 import { vertexAI } from '@genkit-ai/vertexai';
 import { vertexSearch } from "./vertexSearch.js";
-import { googleAI } from '@genkit-ai/google-genai';
-
+import { VertexAI } from '@google-cloud/vertexai';
+//original(moved to vertexai): import { googleAI } from '@genkit-ai/google-genai';
 
 const ai = genkit({
-  plugins: [
-   googleAI() 
-  ],
-  model: 'googleai/gemini-2.0-flash', 
+  plugins: [vertexAI({ location: 'us-central1' })],
+  model: 'vertexAI/gemini-2.5-flash',
 });
 
 export async function analyzeFarmAgent(input) {
@@ -23,10 +21,10 @@ export async function analyzeFarmAgent(input) {
 
     console.log("Agent received input:", JSON.stringify(cropData.exists))
 
-    console.log("Full Output:", JSON.stringify(weather, null, 2),JSON.stringify(soil, null, 2),JSON.stringify(cropData, null, 2));
+    console.log("Full Output:", JSON.stringify(weather, null, 2), JSON.stringify(soil, null, 2), JSON.stringify(cropData, null, 2));
 
-    if (cropData.exists == true){
-    const response = await ai.generate({
+    if (cropData.exists == true) {
+      const response = await ai.generate({
         prompt: `
           Analyze suitability for Crop: ${input.crop} at Location: ${input.address}.
           Weather: Temp ${weather.current_temp}, Humidity ${weather.current_humidity}.
@@ -50,18 +48,18 @@ export async function analyzeFarmAgent(input) {
       return response.output;
     }
 
-    else{
+    else {
       return {
         suitability: 0,
         suitability_reason: `Sorry, ${input.crop} is not a eligible crop. Please try again`,
         irrigationPlan: ["No data available"],
         fertilizerPlan: ["No data available"],
         precautionPlan: ["No data available"]
-    };
+      };
     }
 
   } catch (error) {
     console.error("AGENT_INTERNAL_ERROR:", error);
-    throw error; 
+    throw error;
   }
 }
