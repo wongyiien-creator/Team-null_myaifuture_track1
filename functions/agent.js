@@ -1,7 +1,6 @@
 import { genkit, z } from 'genkit';
 import { vertexAI } from '@genkit-ai/vertexai';
 import { vertexSearch } from "./vertexSearch.js";
-import { VertexAI } from '@google-cloud/vertexai';
 //original(moved to vertexai): import { googleAI } from '@genkit-ai/google-genai';
 
 const ai = genkit({
